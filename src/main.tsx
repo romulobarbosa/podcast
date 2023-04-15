@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 import ErrorPage from "./pages/error"
-import Header from "./ui/components/header"
+import Header from "./ui/layouts/header"
 import HomePage from "./pages/home"
 import PodcastPage from "./pages/podcast"
 

@@ -1,0 +1,16 @@
+.page-container {
+  width: 1536px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 50px 0 10px;
+  margin-bottom: 20px;
+  border-bottom: solid 1px #d2d2d7;
+
+  .header__title {
+    color: #0066cc;
+    margin: 0;
+  }
+}
