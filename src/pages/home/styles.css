@@ -1,0 +1,7 @@
+.home {
+  .home__filter {
+    width: 300px;
+    max-width: 100%;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,19 @@
+.filter {
+  display: flex;
+
+  .filter__total-number {
+    display: flex;
+    height: 25px;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0066cc;
+    padding: 0px 5px;
+    border-radius: 10px;
+    margin-right: 5px;
+  }
+
+  .filter__input {
+    flex: 1;
+  }
+}
