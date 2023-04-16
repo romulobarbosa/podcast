@@ -6,6 +6,6 @@ describe("input", () => {
   it("should render correctly", () => {
     render(<Input />)
 
-    expect(screen.getByRole("textbox")).toBeInTheDocument()
+    expect(screen.getByRole("textbox")).toBeInTheDocument
   })
 })
