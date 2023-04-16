@@ -13,7 +13,11 @@ const PodcastCard: React.FC<PodcastCardProps> = ({ title, author, cover }) => {
         }}
       />
       <h3 className="podcast__title">{title}</h3>
-      {author && <span className="podcast__author">Author: {author}</span>}
+      {author && (
+        <span className="podcast__author" data-testid="podcast-author">
+          Author: <span>{author}</span>
+        </span>
+      )}
     </div>
   )
 }
