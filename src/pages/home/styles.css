@@ -4,4 +4,18 @@
     max-width: 100%;
     margin-left: auto;
   }
+
+  .podcasts {
+    margin-top: 20px;
+
+    .podcasts__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+    }
+
+    .podcasts__list-item {
+      list-style: none;
+    }
+  }
 }
