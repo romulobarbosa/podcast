@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <div id="page-home" className="home">
       <div className="home__filter">
-        <Filter />
+        <Filter totalItems={10} />
       </div>
       <div>HOME PAGE</div>
     </div>

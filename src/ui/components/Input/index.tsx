@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 
-import { InputProps } from "./types"
+import type { InputProps } from "./types"
 
 import "./styles.css"
 
