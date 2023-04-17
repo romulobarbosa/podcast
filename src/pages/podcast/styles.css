@@ -1,0 +1,37 @@
+.podcast-page {
+  .podcast__profile {
+    background-color: #fff;
+    width: 250px;
+    font-size: 12px;
+    padding: 15px 10px;
+  }
+
+  .podcast__profile-cover {
+    padding: 0 10px;
+
+    .podcast__profile-cover-image {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .podcast__profile-rights {
+    padding: 10px 0;
+    border-top: 1px solid #d2d2d7;
+    border-bottom: 1px solid #d2d2d7;
+    margin: 10px 0px;
+  }
+
+  .podcast__profile-title h4 {
+    margin: 0 0 5px 0;
+  }
+
+  .podcast__profile-author {
+    font-style: italic;
+  }
+  .podcast__profile-summary strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+}

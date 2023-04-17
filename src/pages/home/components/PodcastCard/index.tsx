@@ -12,7 +12,7 @@ const PodcastCard: React.FC<PodcastCardProps> = ({
   id,
 }) => {
   return (
-    <Link to={`podcast/${id}`} className="podcast">
+    <Link to={`podcast/${id}`} className="podcast-card">
       <div
         className="podcast__cover"
         style={{
