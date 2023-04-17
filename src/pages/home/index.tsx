@@ -1,95 +1,46 @@
+import { useEffect, useState } from "react"
+import getPodcastsList from "../../services/getPodcastsList"
 import Filter from "../../ui/components/Filter"
 
 import PodcastCard from "./components/PodcastCard"
+import type { Podcast } from "../../services/getPodcastsList/types"
 import "./styles.css"
 
 const HomePage = () => {
+  const [podcastList, setPodcastList] = useState<Podcast[]>([])
+
+  useEffect(() => {
+    getPodcastsList().then((response) => {
+      setPodcastList(response)
+    })
+  }, [])
+
   return (
     <div id="page-home" className="home">
       <div className="home__filter">
-        <Filter totalItems={13} />
+        <Filter totalItems={podcastList.length} />
       </div>
-      <div className="podcasts">
-        <ul className="podcasts__list">
-          <li className="podcasts__list-item">
-            {<PodcastCard title="Galo Forte" author="HULK Paraíba" />}
-          </li>
-          <li className="podcasts__list-item">
-            {
-              <PodcastCard
-                title="Galo Forte"
-                author="HULK Paraíba"
-                cover="https://www.esmaelmorais.com.br/wp-content/uploads/2023/03/hulk-atletico-mg.jpg"
-              />
-            }
-          </li>
-          <li className="podcasts__list-item">
-            {
-              <PodcastCard
-                title="Galo Forte"
-                author="HULK Paraíba"
-                cover="https://www.esmaelmorais.com.br/wp-content/uploads/2023/03/hulk-atletico-mg.jpg"
-              />
-            }
-          </li>
-          <li className="podcasts__list-item">
-            {
-              <PodcastCard
-                title="Galo Forte"
-                author="HULK Paraíba"
-                cover="https://www.esmaelmorais.com.br/wp-content/uploads/2023/03/hulk-atletico-mg.jpg"
-              />
-            }
-          </li>
-          <li className="podcasts__list-item">
-            {
-              <PodcastCard
-                title="Galo Forte"
-                author="São Victor do horto"
-                cover="http://blog.chicomaia.com.br/wordpress/wp-content/uploads/2017/05/VICTOR.jpg"
-              />
-            }
-          </li>
-          <li className="podcasts__list-item">
-            {<PodcastCard title="Galo Forte" author="HULK Paraíba" />}
-          </li>
-          <li className="podcasts__list-item">
-            {<PodcastCard title="Galo Forte" author="HULK Paraíba" />}
-          </li>
-          <li className="podcasts__list-item">
-            {
-              <PodcastCard
-                title="Galo Forte e Vingador!"
-                author="HULK Paraíba"
-                cover="https://www.esmaelmorais.com.br/wp-content/uploads/2023/03/hulk-atletico-mg.jpg"
-              />
-            }
-          </li>
-          <li className="podcasts__list-item">
-            {<PodcastCard title="Galo Forte" />}
-          </li>
-          <li className="podcasts__list-item">
-            {<PodcastCard title="Galo Forte" author="HULK Paraíba" />}
-          </li>
-          <li className="podcasts__list-item">
-            {
-              <PodcastCard
-                title="Galo Forte"
-                cover="https://www.esmaelmorais.com.br/wp-content/uploads/2023/03/hulk-atletico-mg.jpg"
-              />
-            }
-          </li>
-          <li className="podcasts__list-item">
-            {
-              <PodcastCard
-                title="Galo Forte"
-                author="HULK Paraíba"
-                cover="https://www.esmaelmorais.com.br/wp-content/uploads/2023/03/hulk-atletico-mg.jpg"
-              />
-            }
-          </li>
-        </ul>
-      </div>
+
+      {podcastList && (
+        <div className="podcasts">
+          <ul className="podcasts__list">
+            {podcastList.map((podcast, index) => (
+              <li
+                className="podcasts__list-item"
+                key={`${index}-${podcast.title}`}
+              >
+                {
+                  <PodcastCard
+                    title={podcast.title}
+                    author={podcast.author}
+                    cover={podcast.cover}
+                  />
+                }
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   )
 }
