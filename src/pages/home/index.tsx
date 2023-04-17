@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+
 import getPodcastsList from "../../services/getPodcastsList"
 import Filter from "../../ui/components/Filter"
 
@@ -15,6 +16,9 @@ const HomePage = () => {
     getPodcastsList().then((response) => {
       setPodcastList(response)
       setPodcastListToShow(response)
+
+      window.localStorage.setItem("podcastsList", JSON.stringify(response))
+      window.localStorage.setItem("lastRequestTime", JSON.stringify(new Date()))
     })
   }, [])
 
@@ -52,6 +56,7 @@ const HomePage = () => {
                     title={podcast.title}
                     author={podcast.author}
                     cover={podcast.cover}
+                    id={podcast.id}
                   />
                 }
               </li>
