@@ -1,3 +1,4 @@
 export interface FilterProps {
-  totalItems?: number
+  totalItems: number
+  onChange: (str: string) => void
 }

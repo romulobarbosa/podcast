@@ -8,23 +8,41 @@ import "./styles.css"
 
 const HomePage = () => {
   const [podcastList, setPodcastList] = useState<Podcast[]>([])
+  const [podcastListToShow, setPodcastListToShow] = useState<Podcast[]>([])
+  const [searchTerm, setSearchTerm] = useState("million")
 
   useEffect(() => {
     getPodcastsList().then((response) => {
       setPodcastList(response)
+      setPodcastListToShow(response)
     })
   }, [])
+
+  useEffect(() => {
+    const newList = podcastList.filter(
+      (pd) =>
+        pd.author
+          .toLocaleLowerCase()
+          .includes(searchTerm.toLocaleLowerCase()) ||
+        pd.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+    )
+
+    setPodcastListToShow(newList)
+  }, [searchTerm])
 
   return (
     <div id="page-home" className="home">
       <div className="home__filter">
-        <Filter totalItems={podcastList.length} />
+        <Filter
+          totalItems={podcastListToShow.length}
+          onChange={setSearchTerm}
+        />
       </div>
 
-      {podcastList && (
+      {podcastListToShow && (
         <div className="podcasts">
           <ul className="podcasts__list">
-            {podcastList.map((podcast, index) => (
+            {podcastListToShow.map((podcast, index) => (
               <li
                 className="podcasts__list-item"
                 key={`${index}-${podcast.title}`}
