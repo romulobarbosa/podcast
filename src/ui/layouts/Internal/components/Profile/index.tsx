@@ -16,7 +16,7 @@ const PodcastProfile: React.FC<ProfileProps> = ({
         <img
           src={cover}
           alt="podcast cover image"
-          className="podcast-profile-cover__image"
+          className="podcast-profile__cover-image"
         />
       </div>
 

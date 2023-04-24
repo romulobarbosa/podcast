@@ -1,53 +1,53 @@
-.podcast-page {
-  padding-bottom: 50px;
+.internal-page {
+  width: 100%;
+  margin-left: 30px;
+  flex: 1;
 
-  .podcast {
-    display: flex;
-  }
-
-  .podcast-details {
-    margin-left: 30px;
-    flex: 1;
-  }
-
-  .podcast-details__box {
+  .podcast-internal__box {
     background-color: #fff;
     border-radius: 4px;
     padding: 10px 15px;
     box-shadow: 0px 3px 8px #d2d2d7;
   }
 
-  .podcast-details__table-container {
+  .podcast-internal__table-container {
     margin-top: 20px;
   }
-  .podcast-details__table {
+  .podcast-internal__table {
     width: 100%;
     border-collapse: collapse;
 
-    .podcast-details__table-header {
+    .podcast-internal__table-header {
       border-bottom: 2px solid #d2d2d7;
       height: 30px;
     }
-    .podcast-details__table-title {
+    .podcast-internal__table-title-header {
       width: 70%;
       text-align: left;
+      padding-left: 5px;
     }
-    .podcast-details__table-date {
+    .podcast-internal__table-date-header {
       width: 15%;
       text-align: left;
     }
-    .podcast-details__table-duration {
+    .podcast-internal__table-duration-header {
       width: 15%;
       text-align: left;
     }
 
-    .podcast-details__table-line {
+    .podcast-internal__table-line {
       height: 30px;
       border-bottom: 1px solid #d2d2d7;
+      cursor: pointer;
 
       &:nth-child(odd) {
         background-color: #f5f5f7;
       }
+    }
+
+    .podcast-internal__table-title {
+      color: #0066cc;
+      padding-left: 5px;
     }
   }
 }

@@ -3,11 +3,12 @@ import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 import ErrorPage from "./pages/error"
-import Header from "./ui/layouts/header"
+import Header from "./ui/layouts/Header"
 import HomePage from "./pages/home"
-import PodcastPage from "./pages/podcast"
+import InternalPage from "./pages/podcast"
 
 import "./index.css"
+import Internal from "./ui/layouts/Internal"
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,17 @@ const router = createBrowserRouter([
       },
       {
         path: "podcast/:id",
-        element: <PodcastPage />,
+        element: <Internal />,
+        children: [
+          {
+            path: "",
+            element: <InternalPage />,
+          },
+          {
+            path: "episode/:epid",
+            element: <div>ep page here</div>,
+          },
+        ],
       },
     ],
   },
