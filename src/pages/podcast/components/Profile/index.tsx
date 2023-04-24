@@ -2,6 +2,8 @@ import React from "react"
 
 import type { ProfileProps } from "./type"
 
+import "./styles.css"
+
 const PodcastProfile: React.FC<ProfileProps> = ({
   cover,
   title,
@@ -9,30 +11,30 @@ const PodcastProfile: React.FC<ProfileProps> = ({
   author,
 }) => {
   return (
-    <div className="podcast__profile">
-      <div className="podcast__profile-cover">
+    <div className="podcast-profile">
+      <div className="podcast-profile__cover">
         <img
           src={cover}
           alt="podcast cover image"
-          className="podcast__profile-cover-image"
+          className="podcast-profile-cover__image"
         />
       </div>
 
-      <div className="podcast__profile-rights">
-        <div className="podcast__profile-title">
+      <div className="podcast-profile__rights">
+        <div className="podcast-profile__title">
           <h4>{title}</h4>
         </div>
-        <div className="podcast__profile-author">
+        <div className="podcast-profile__author">
           <span>
             By <span>{author}</span>
           </span>
         </div>
       </div>
 
-      <div className="podcast__profile-summary">
+      <div className="podcast-profile__summary">
         <p>
           <strong>Description:</strong>
-          {summary}
+          <span>{summary}</span>
         </p>
       </div>
     </div>
